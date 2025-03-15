@@ -1,6 +1,8 @@
 # Spring AI Alibaba 集成示例
 
-本示例项目展示了如何使用 Spring AI Alibaba 集成 Chat、Audio、Image 等功能。该项目设计为一个独立且可移植的示例，您可以直接使用或参考此项目，将 Spring AI Alibaba 集成到您的项目中。
+本示例项目展示了如何使用 Spring AI Alibaba 集成 Chat、Audio、Image 等功能。
+该项目设计为一个独立且可移植的示例，
+您可以直接使用或参考此项目，将 Spring AI Alibaba 集成到您的项目中。
 
 ## 快速开始
 
@@ -16,7 +18,8 @@ cd spring-ai-alibaba-integration-example
 cd frontend
 pnpm install
 ```
-
+npm install -g pnpm
+pnpm install --registry=https://registry.npmmirror.com
 启动开发服务器：
 ```bash
 pnpm dev
