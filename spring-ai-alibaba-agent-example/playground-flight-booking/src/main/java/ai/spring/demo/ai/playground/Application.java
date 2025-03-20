@@ -38,14 +38,15 @@ public class Application  {
 			vectorStore.write(new TokenTextSplitter().transform(new TextReader(termsOfServiceDocs).read()));
 
 			vectorStore.similaritySearch("Cancelling Bookings").forEach(doc -> {
-				logger.info("Similar Document: {}", doc.getContent());
+				logger.info("Similar Document: {}", doc.getText());
 			});
 		};
 	}
 
 	@Bean
 	public VectorStore vectorStore(EmbeddingModel embeddingModel) {
-		return new SimpleVectorStore(embeddingModel);
+
+		return SimpleVectorStore.builder(embeddingModel).build();
 	}
 
 	@Bean
