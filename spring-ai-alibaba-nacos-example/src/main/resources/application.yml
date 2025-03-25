@@ -22,9 +22,9 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: ${NACOS_SERVER_ADDR}
+        server-addr: 192.168.8.140:8848
       discovery:
-        server-addr: ${NACOS_SERVER_ADDR}
+        server-addr: 192.168.8.140:8848
 
   config:
     import:
@@ -33,7 +33,7 @@ spring:
   ai:
     openai:
       base-url: https://api.deepseek.com
-      api-key: ${DEEPSEEK_API_KEY}
+      api-key: sk-5d652983548143be96ce0b904177589f
       chat:
         enabled: true
         options:

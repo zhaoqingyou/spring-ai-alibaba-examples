@@ -29,6 +29,7 @@ import org.springframework.ai.image.ImageResponse;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -42,16 +43,17 @@ public class DashScopeImageController {
 
 	private final ImageModel imageModel;
 
-	private static final String DEFAULT_PROMPT = "为人工智能生成一张富有科技感的图片！";
+	private static final String DEFAULT_PROMPT = "帮我生成一张:nacos可以动态修改智能体系统提示词的图片";
 
 	public DashScopeImageController(ImageModel imageModel) {
 		this.imageModel = imageModel;
 	}
 
 	@GetMapping("/image")
-	public void image(HttpServletResponse response) {
+	public void image(HttpServletResponse response,@RequestParam("prompt") String prompt) {
 
-		ImageResponse imageResponse = imageModel.call(new ImagePrompt(DEFAULT_PROMPT));
+//		ImageResponse imageResponse = imageModel.call(new ImagePrompt(DEFAULT_PROMPT));
+		ImageResponse imageResponse = imageModel.call(new ImagePrompt(prompt));
 		String imageUrl = imageResponse.getResult().getOutput().getUrl();
 
 		try {
