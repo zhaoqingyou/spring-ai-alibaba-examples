@@ -75,9 +75,8 @@ public class MoreModelCallController {
 		Generation gen = dashScopeChatModel.call(
 						new Prompt(prompt, runtimeOptions))
 				.getResult();
-		//版本更新导致的error dennyzhao
+
 		return gen.getOutput().getText();
-//		return gen.getOutput().getText();
 	}
 
 }
