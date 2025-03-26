@@ -67,7 +67,7 @@ public class Application {
 
 		// based on
 		// https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem
-		var stdioParams = ServerParameters.builder("npx")
+		var stdioParams = ServerParameters.builder("npx.cmd")
 				.args("-y", "@modelcontextprotocol/server-filesystem", getFilePath())
 				.build();
 
